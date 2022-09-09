@@ -63,7 +63,10 @@ $(window).scroll(function() {
     }
 })        
 
+// mengurus img portfolio
 
+// const zoom = document.querySelectorAll('.materialboxed');
+// M.Materialbox.init(zoom)
 
 // mengurus yg about
 
@@ -73,10 +76,10 @@ $(window).on('load',function() {
         $('.pKiri').addClass('pMuncul')
     }, 2000);
 
-    // mengurus allert
-    setTimeout(() => {
-        $('.alert').addClass('alertMuncul')
-    }, 5000);
+    // // mengurus allert
+    // setTimeout(() => {
+    //     $('.alert').addClass('alertMuncul')
+    // }, 5000);
 })
 
 // mengurus portfolio overlow
@@ -119,5 +122,26 @@ $('.tombol-close').on('click',function() {
     $('.overlay6').removeClass('overlayMuncul6')
 })
 
+// Ini bagian form contact
+const scriptURL = 'https://script.google.com/macros/s/AKfycby9gqOS1kLKi13VrrvPia-kWUlwulI40tXc5Y0hpAQLH36oBZQV2RcNM6ExCmaL17nteg/exec'
+const form = document.forms['submit-to-google-sheet']
+const tolLoading = document.querySelector('.btnLoading')
+const tolKirim = document.querySelector('.btnKirim')
+const alerts = document.querySelector('.alert')
 
+form.addEventListener('submit', e => {
+    e.preventDefault()
+    tolKirim.classList.toggle('d-none')
+    tolLoading.classList.toggle('d-none')
 
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response =>{
+        tolKirim.classList.toggle('d-none')
+        tolLoading.classList.toggle('d-none')
+        alerts.classList.toggle('d-none')
+        console.log('Success!', response)
+
+        form.reset()
+    })
+    .catch(error => console.error('Error!', error.message))
+})
