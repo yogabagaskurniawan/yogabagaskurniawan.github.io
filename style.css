@@ -1,0 +1,175 @@
+
+html{
+    position: relative;
+}
+
+body{
+    margin-bottom: 90px;
+    margin-top: 50px;
+}
+
+/* jumbotron */
+
+.jumbotron{
+    background-image: url('img/header-bg.jpeg');
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.jumbotron h1, .jumbotron p{
+    color: aliceblue;
+    text-shadow: 1px 1px 3px black ;
+}
+
+.jumbotron img{
+    width: 200px;
+    height: 200px;
+    border: 3px solid aliceblue;
+    margin: 5px 0;
+    box-shadow: 1px 1px 3px black ;
+}
+
+
+
+/* about    */
+
+section{
+    min-height: 800px;
+}
+
+.h3-about{
+    margin-top: 35px;
+}
+
+hr{
+    width: 250px;
+    border: 1px solid black;
+    margin-bottom: 50px;
+}
+
+.pKanan, .pKiri{
+    opacity: 0;
+    transform: translate(-50px, 0) rotate(15deg);
+    transition: 1s;
+}
+
+.pKanan{
+    transform: translate(50px, 0) rotate(-15deg);
+}
+
+.pKanan.pMuncul, .pKiri.pMuncul{
+    opacity: 1;
+    transform: translate(0,0);
+}
+
+/* portfolio */
+
+.portfolio .container{
+    min-height: 1000px;
+}
+
+.portfolio .card{
+    margin-top: 30px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3) ;
+}
+
+.card:hover{
+    cursor: pointer;
+}
+
+.portfolio{
+    padding: 35px 0;
+}
+
+.portfolio .thumbnail{
+    opacity: 0;
+    transition: 1s;
+    transform: translate(0px, -40px);
+}
+
+.portfolio .thumbnail.muncul{
+    opacity: 1;
+    transform: translate(0,0);
+}
+
+/* overlay portfolio*/
+
+.overlay1,
+.overlay2,
+.overlay3,
+.overlay4,
+.overlay5,
+.overlay6{
+    background-color: rgba(0, 0, 0, 0);
+    transition: 1s;
+    z-index: 9999999999;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    padding: 150px 0;
+    text-align: center;
+}
+
+.overlay1.overlayMuncul1,
+.overlay2.overlayMuncul2,
+.overlay3.overlayMuncul3,
+.overlay4.overlayMuncul4,
+.overlay5.overlayMuncul5,
+.overlay6.overlayMuncul6{
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+
+    width: auto;
+    height: auto;
+    animation: nexbac 1s forwards;
+}
+
+.overlayCard1,
+.overlayCard2,
+.overlayCard3,
+.overlayCard4,
+.overlayCard5,
+.overlayCard6{
+    max-width: 500px;
+    margin: auto;
+}
+
+@keyframes nexbac {
+    0%{
+        opacity: 0;
+    }100%{
+        opacity: 1;
+    }
+}
+
+/* contact */
+
+.contact{
+    padding: 35px 0;
+
+}
+
+/* footer */
+
+footer{
+    width: 100%;
+    height: 90px;
+    background-color: black;
+    position: absolute;
+    bottom: 0%;
+}
+
+footer h1{
+    text-align: center;
+    font-size: 20px;
+    color: whitesmoke;
+    line-height: 80px;
+}
+
+
