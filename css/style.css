@@ -1,0 +1,49 @@
+
+/* slider */
+.slider h3,
+.slider h5{
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* about */
+.about h3{
+    margin-bottom: 40px;
+}
+
+/* clients */
+.clients{
+    margin-top: 50px;
+}
+
+.parallax-container{
+    height: 20%;
+}
+
+.parallax{
+    filter: grayscale(1);
+    opacity: 0.6;
+}
+
+.gbr-client{
+    max-width: 150px;
+}
+
+.parallax-container .container{
+    filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.5));
+}
+
+/* Services */
+
+section, footer {
+    padding: .1px 0;
+}
+
+.services{
+    padding-bottom: 100px;
+}
+
+/* contact */
+
+.contactku{
+    padding-bottom: 100px;
+}
